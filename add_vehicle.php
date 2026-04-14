@@ -18,7 +18,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $variant = isset($_POST['variant']) ? $_POST['variant'] : '';
     $license = $_POST['license'];
     $kms = $_POST['kms'];
+    $ownership_date = $_POST['ownership_date'];
     $last_service = $_POST['last_service'];
+    $kms_last_service = $_POST['kms_last_service'];
 
     // CHECK IF ID 3 EXISTS
     $check = $conn->query("SELECT id FROM vehicles WHERE id = 3");
@@ -34,14 +36,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             variant='$variant',
             license_no='$license',
             kms='$kms',
-            last_service='$last_service'
+            kms_last_service='$kms_last_service',
+            last_service='$last_service',
+            ownership_date='$ownership_date'
             WHERE id=3
         ");
     } else {
         // INSERT WITH ID 3
         $conn->query("INSERT INTO vehicles 
-        (id, user, company, model, year, fuel, variant, license_no, kms, last_service)
-        VALUES (3,'$user','$company','$model','$year','$fuel','$variant','$license','$kms','$last_service')
+        (id, user, company, model, year, fuel, variant, license_no, kms, last_service, ownership_date, kms_last_service)
+        VALUES (3,'$user','$company','$model','$year','$fuel','$variant','$license','$kms','$last_service','$ownership_date','$kms_last_service')
         ");
     }
 
@@ -120,6 +124,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <div class="form-group">
         <label>KMs Driven</label>
         <input type="number" name="kms" required>
+    </div>
+    <div class="form-group">
+        <label>KMs at Last Service</label>
+        <input type="number" name="kms_last_service" required>
+    </div>
+
+    <div class="form-group">
+        <label>Ownership Date</label>
+        <input type="date" name="ownership_date" required>
     </div>
 
     <div class="form-group">

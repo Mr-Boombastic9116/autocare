@@ -26,7 +26,7 @@ $v3 = $conn->query("SELECT * FROM vehicles WHERE id=2")->fetch_assoc();
 
     <div class="header-left">
         <img src="assets/images/logo.png" class="logo">
-        <span class="divider"></span>
+        <span class="divider">|</span>
         <h1>Auto<span>Care</span></h1>
     </div>
 

@@ -319,12 +319,15 @@ select[style*="display: none"] {
     width: 90%;
     margin: 40px auto;
     display: flex;
+    align-items: flex-start;
     gap: 30px;
 }
 
 /* LEFT PANEL */
 .left-panel {
     width: 30%;
+    flex-shrink: 0;            
+    align-self: flex-start;
     background: white;
     padding: 20px;
     border-radius: 12px;
@@ -346,6 +349,7 @@ select[style*="display: none"] {
 .right-panel {
     width: 70%;
     background: white;
+    flex: 1;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
@@ -449,7 +453,7 @@ select[style*="display: none"] {
 .download-btn {
     padding: 6px 12px;
     border: none;
-    background-color: #dc3545;
+    background-color: #357ABD;
     color: white;
     border-radius: 6px;
     cursor: pointer;
@@ -462,4 +466,206 @@ select[style*="display: none"] {
 
 .download-btn:hover {
     background-color: #b02a37;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.service-col p {
+    margin: 10px 0;
+}
+
+.status-good {
+    color: #28a745; /* green */
+    font-weight: 600;
+}
+
+.status-moderate {
+    color: #FFC107; /* yellow */
+    font-weight: 600;
+}
+
+.status-bad {
+    color: #dc3545; /* red */
+    font-weight: 600;
+}
+/* STACKED CARDS */
+.renewal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* CARD */
+.renewal-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.renewal-card h4 {
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* ISSUED + EXPIRES ROW */
+.renewal-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* EACH BLOCK */
+.renewal-details div {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* LABEL */
+.renewal-details span {
+    color: #2c2c2c;
+}
+
+/* VALUE */
+.renewal-details b {
+    font-weight: 600;
+}
+
+/* BUTTON ROW */
+.renewal-action {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* BUTTON */
+.renew-btn {
+    background: #FFC107;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.renew-btn:hover {
+    background: #e0a800;
+}
+/* =========================
+   STATUS COLORS (MERGED)
+========================= */
+
+/* keep your existing ones but unify */
+.status-good {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-moderate {
+    color: #FFC107;
+    font-weight: 600;
+}
+
+/* alias for safety (in case used somewhere) */
+.status-warning {
+    color: #FFC107;
+    font-weight: 600;
+}
+
+.status-bad {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.single-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    align-items: center;
+}
+
+/* each pair (label + value) */
+.detail-block {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.detail-block span:first-child {
+    font-weight: 700;   /* medium bold */
+    color: #333;
+}
+
+/* VALUE (date) */
+.detail-block span:last-child {
+    font-weight: 600;
+}
+
+/* allow status colors to override */
+.detail-block span.status-good {
+    color: #1c7c32;
+}
+
+.detail-block span.status-moderate {
+    color: #FFC107;
+}
+
+.detail-block span.status-bad {
+    color: #dc3545;
+}
+.service-col b {
+    font-weight: 700;   /* lighter than headings */
+    color: #333;
+}
+h3 {
+    font-weight: 700;   /* stronger than labels */
+}
+/* ADD DOCUMENT CARD */
+.add-doc {
+    justify-content: center;
+    cursor: pointer;
+    border: 2px dashed #FFC107;
+    background-color: #fff8e1;
+    font-weight: 600;
+    color: #b58900;
+    transition: 0.2s;
+}
+
+/* hover effect */
+.add-doc:hover {
+    background-color: #ffecb3;
+    transform: scale(1.02);
+}
+/* BACK BUTTON CONTAINER */
+.back-btn-container {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #4a90e2, #357ABD);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 800;   /* 👈 makes text bold */
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #357ABD, #2c5ea8);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
