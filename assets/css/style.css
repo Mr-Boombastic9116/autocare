@@ -281,3 +281,185 @@ select[style*="display: none"] {
 .vehicle-card-new {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* CENTER WRAPPER */
+.add-vehicle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 60px 0;
+}
+
+/* ADD VEHICLE CARD */
+.add-vehicle-card {
+    width: 250px;
+    height: 220px;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+    transition: 0.25s;
+}
+
+/* PLUS ICON */
+.plus-icon {
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFC107;
+    margin-bottom: 10px;
+}
+
+/* HOVER EFFECT */
+.add-vehicle-card:hover {
+    border-color: #FFC107;
+    background-color: #fff8e1;
+    transform: scale(1.05);
+}
+
+.details-container {
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.car-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.basic-info p {
+    margin: 5px 0;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 70%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.tab-btn.active {
+    background: #FFC107;
+}
+
+/* TAB CONTENT */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* BUTTONS */
+.action-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background: #FFC107;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* DOCUMENT ROW */
+.doc-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.doc-row button {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+/* DETAILS 2-COLUMN GRID */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.details-col p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+/* GRID FOR DOCUMENTS */
+.doc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+}
+
+/* EACH ROW */
+.doc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+/* BUTTON GROUP */
+.doc-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* VIEW BUTTON */
+.view-btn {
+    padding: 6px 12px;
+    border: none;
+    background-color: #FFC107;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+    padding: 6px 12px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* HOVER */
+.view-btn:hover {
+    background-color: #ca9906;
+}
+
+.download-btn:hover {
+    background-color: #b02a37;
+}

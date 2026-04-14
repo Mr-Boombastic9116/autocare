@@ -64,11 +64,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <body>
 
 <header class="main-header">
-<div class="header-content">
-<img src="assets/images/logo.png" class="logo">
-<span class="divider"></span>
-<h1>Auto<span>Care</span></h1>
-</div>
+    <div class="header-content">
+        <img src="assets/images/logo.png" alt="Logo" class="logo">
+        <span class="divider">|</span>
+        <h1>Auto<span>Care</span></h1>
+    </div>
 </header>
 
 <div class="login-box">
@@ -132,6 +132,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <button type="submit">Add Vehicle</button>
 </form>
 </div>
+<br><br><br><br><br><br><br>
+<footer>
+    © 2026 AutoCare | Designed by AutoCare Team
+</footer>
 
 <script src="assets/js/script.js"></script>
 

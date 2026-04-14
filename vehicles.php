@@ -72,6 +72,13 @@ $v3 = $conn->query("SELECT * FROM vehicles WHERE id=2")->fetch_assoc();
 </div>
 
 </div>
+<div class="add-vehicle-wrapper">
+    <div class="vehicle-card-new add-vehicle-card">
+        <div class="plus-icon">+</div>
+        <h3>Add Another Vehicle</h3>
+    </div>
+</div>
+
 <footer>
     © 2026 AutoCare | Designed by AutoCare Team
 </footer>
