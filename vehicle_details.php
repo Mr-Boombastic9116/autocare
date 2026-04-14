@@ -521,7 +521,6 @@ function getDocStatus($expiry, $today){
     </div>
 
 </div>
-
         <!-- DOCUMENT HOLDER -->
 <div class="tab-content" id="docs">
 
@@ -592,7 +591,10 @@ function getDocStatus($expiry, $today){
     </div>
 
 </div>
-
+<br><br><br>
+<footer>
+    © 2026 AutoCare | Designed by AutoCare Team
+</footer>
 <script>
 function openTab(tabId){
     document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
