@@ -292,7 +292,7 @@ select[style*="display: none"] {
 /* ADD VEHICLE CARD */
 .add-vehicle-card {
     width: 250px;
-    height: 220px;
+    height: 210px;
     justify-content: center;
     cursor: pointer;
     border: 2px dashed #ccc;

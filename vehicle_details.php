@@ -178,7 +178,7 @@ function getDocStatus($expiry, $today){
 
     <!-- BACK BUTTON -->
     <div class="back-btn-container">
-        <button onclick="window.location.href='vehicle.php'" class="back-btn">
+        <button onclick="window.location.href='vehicles.php'" class="back-btn">
             ← BACK TO VEHICLES
         </button>
     </div>
