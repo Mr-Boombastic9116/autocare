@@ -24,6 +24,7 @@ $kms = (int)$vehicle['kms'];
 $last_service = new DateTime($vehicle['last_service']);
 $ownership = new DateTime($vehicle['ownership_date']);
 $today = new DateTime();
+$kms_last_service = (int)$vehicle['kms_last_service'];
 
 // ===== TIME =====
 $days_since_service = $today->diff($last_service)->days;
@@ -31,13 +32,13 @@ $months_since_service = ($today->diff($last_service)->y * 12) + $today->diff($la
 
 // ===== SERVICE RULE =====
 $service_interval_km = 10000;
-$next_service_km = $kms + 5000;
+$next_service_km = $kms_last_service + 5000;
 
 $next_service_date = clone $last_service;
 $next_service_date->modify("+6 months");
 
 // ===== REALISTIC USAGE =====
-$kms_last_service = (int)$vehicle['kms_last_service'];
+
 $kms_since_service = $kms - $kms_last_service;
 $monthly_km = $months_since_service > 0 ? $kms / $months_since_service : 0;
 
@@ -149,7 +150,7 @@ function getDocStatus($expiry, $today){
 
 <!-- HEADER -->
 <div class="header-content header-flex">
-    <div class="header-left">
+    <div class="header-left" onclick="window.location.href='home.php'" style="cursor:pointer;">
         <img src="assets/images/logo.png" class="logo">
         <span class="divider">|</span>
         <h1>Auto<span>Care</span></h1>
@@ -516,6 +517,9 @@ function getDocStatus($expiry, $today){
             </div>
             <br>
             <button class="renew-btn">Recharge</button>
+        </div>
+        <div class="renewal-card add-doc-card">
+            <h3>+ Add Document</h3>
         </div>
 
     </div>

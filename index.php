@@ -5,18 +5,31 @@ include("includes/db.php");
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE email='$username' AND password='$password'";
+    // find user by email OR username
+    $sql = "SELECT * FROM users WHERE email='$username' OR username='$username'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $_SESSION['user'] = $username;
-        header("Location: add_vehicle.php");
-        exit();
+
+        $row = $result->fetch_assoc();
+
+        // verify password
+        if (password_verify($password, $row['password'])) {
+
+            $_SESSION['user'] = $row['username'];
+            header("Location: vehicles.php");
+            exit();
+
+        } else {
+            $error = "Invalid password";
+        }
+
     } else {
-        $error = "Invalid username or password";
+        $error = "User not found";
     }
 }
 ?>
@@ -30,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <header class="main-header">
-    <div class="header-content">
+    <div class="header-content" onclick="window.location.href='home.php'" style="cursor:pointer;">
         <img src="assets/images/logo.png" alt="Logo" class="logo">
         <span class="divider">|</span>
         <h1>Auto<span>Care</span></h1>
@@ -52,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php } ?>
 
     <div class="signup">
-        Not a user? <a href="#">Sign up</a>
+        Not a user? <a href="signup.php">Sign up</a>
     </div>
 </div>
 

@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <body>
 
-<header class="main-header">
+<header class="main-header" onclick="window.location.href='home.php'" style="cursor:pointer;">
     <div class="header-content">
         <img src="assets/images/logo.png" alt="Logo" class="logo">
         <span class="divider">|</span>
