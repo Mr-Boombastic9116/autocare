@@ -67,7 +67,7 @@ if(!empty($data['services'])){
 .booking-id {
     margin-top: 10px;
     font-weight: bold;
-    color: #FFC107;
+    color: #dda807;
 }
 
 /* DETAILS */
@@ -198,6 +198,9 @@ if(!empty($services)){
     </button>
 
 </div>
-
+<br><br><br>
+<footer>
+    © 2026 AutoCare | Designed by AutoCare Team
+</footer>
 </body>
 </html>

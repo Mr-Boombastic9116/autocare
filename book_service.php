@@ -340,6 +340,32 @@ if(!isset($_SESSION['user'])){
     margin-top: 3px;
     text-align: center;
 }
+
+.contact-info {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    border-left: 4px solid #FFC107;
+}
+
+.contact-info h4 {
+    margin-bottom: 8px;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #444;
+    padding: 3px 0;
+}
+
+.contact-row span:first-child {
+    font-weight: 600;
+    color: #222;
+}
+
 </style>
 </head>
 
@@ -375,10 +401,35 @@ if(!isset($_SESSION['user'])){
     <div class="center-details">
         <p>Authorized Hyundai service center with certified technicians and modern equipment.</p>
     </div>
-    <br>
+
+    <div class="contact-info">
+
+    <h4 class="location-title">Contact Information</h4>
+
+    <div class="contact-row">
+        <span>📞 Phone:</span>
+        <span>+91 98765 43210</span>
+    </div>
+
+    <div class="contact-row">
+        <span>📞 Landline:</span>
+        <span>0832 276 8890</span>
+    </div>
+
+    <div class="contact-row">
+        <span>✉ Email:</span>
+        <span>service@alconhyundai.com</span>
+    </div>
+
+</div>
+<br>
     <!-- RATINGS -->
     <div class="ratings-box">
-        <p><strong>⭐ Overall Rating: 4.5 / 5</strong></p>
+        <div style="text-align:center; margin-bottom:10px;">
+    <p style="font-size:16px; font-weight:700; color:#1e3c72;">
+        ⭐ Overall Rating: <span style="color:black;">4.5 / 5</span>
+    </p>
+</div>
 
         <div class="rating-grid">
 
@@ -710,7 +761,10 @@ if(!isset($_SESSION['user'])){
         <p>Redirecting to Payment Gateway...</p>
     </div>
 </div>
-
+<br><br><br>
+<footer>
+    © 2026 AutoCare | Designed by AutoCare Team
+</footer>
 <script>
 
 // DATE
@@ -823,19 +877,31 @@ document.getElementById("bookBtn").onclick = function(){
 
     // SEND DATA TO PHP
     fetch("ajax/save_booking.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `date=${encodeURIComponent(date)}
-              &time=${encodeURIComponent(slot)}
-              &services=${encodeURIComponent(services)}
-              &total=${encodeURIComponent(total)}
-              &notes=${encodeURIComponent(notes)}`
-    })
-    .then(() => {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `date=${encodeURIComponent(date)}
+          &time=${encodeURIComponent(slot)}
+          &services=${encodeURIComponent(services)}
+          &total=${encodeURIComponent(total)}
+          &notes=${encodeURIComponent(notes)}`
+})
+.then(res => res.json())
+.then(data => {
+
+    if(data.status === "success"){
+
+        // store booking id
+        sessionStorage.setItem("booking_id", data.booking_id);
+
         setTimeout(() => {
             window.location.href = "confirmation.php";
         }, 3000);
-    });
+
+    } else {
+        alert("Booking failed");
+    }
+
+});
 };
 
 // PROFILE DROPDOWN
