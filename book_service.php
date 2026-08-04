@@ -766,7 +766,10 @@ if(!isset($_SESSION['user'])){
     © 2026 AutoCare | Designed by AutoCare Team
 </footer>
 <script>
-
+    
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+document.getElementById("service-date").min = tomorrow.toISOString().split("T")[0];
 // DATE
 document.getElementById("service-date").onchange = () => {
     document.getElementById("time-section").style.display="block";
